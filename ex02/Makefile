@@ -6,7 +6,7 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/04/20 21:27:05 by cereais          ###   ########.fr        #
+#    Updated: 2025/04/21 03:16:56 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/tests.cpp
-OBJS     := $(OBJ_DIR)/tests.o
+SRCS     := $(SRC_DIR)/tests.cpp $(SRC_DIR)/Account.cpp $(SRC_DIR)/AccountUtils.cpp
+OBJS     := $(OBJ_DIR)/tests.o   $(OBJ_DIR)/Account.o   $(OBJ_DIR)/AccountUtils.o
 
 all: $(NAME)
 
