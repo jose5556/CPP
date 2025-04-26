@@ -6,7 +6,7 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/04/26 07:58:00 by cereais          ###   ########.fr        #
+#    Updated: 2025/04/26 22:17:32 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/zombieHorde.cpp $(SRC_DIR)/Zombie.cpp
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/zombieHorde.o $(OBJ_DIR)/Zombie.o
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/HumanA.cpp $(SRC_DIR)/Humanb.cpp $(SRC_DIR)/Weapon.cpp
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/HumanA.o $(OBJ_DIR)/HumanB.o $(OBJ_DIR)/Weapon.o
 
 all: $(NAME)
 
