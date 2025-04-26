@@ -6,11 +6,11 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/04/26 05:47:22 by cereais          ###   ########.fr        #
+#    Updated: 2025/04/26 07:58:00 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := zombieHorde
+NAME     := humans
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
