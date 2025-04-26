@@ -6,19 +6,19 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/04/26 01:23:21 by cereais          ###   ########.fr        #
+#    Updated: 2025/04/26 05:47:22 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := zombie
+NAME     := zombieHorde
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/newZombie.cpp $(SRC_DIR)/randomChump.cpp $(SRC_DIR)/Zombie.cpp
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/newZombie.o $(OBJ_DIR)/randomChump.o $(OBJ_DIR)/Zombie.o
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/zombieHorde.cpp $(SRC_DIR)/Zombie.cpp
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/zombieHorde.o $(OBJ_DIR)/Zombie.o
 
 all: $(NAME)
 
