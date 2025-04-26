@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 01:34:18 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/26 06:16:15 by cereais          ###   ########.fr       */
+/*   Updated: 2025/04/26 06:35:13 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void ) {
     
     Zombie *z1;
-    int     N = 10;
+    int     N = 1;
     
     z1 = zombieHorde(N, "zee");
     
@@ -25,6 +25,5 @@ int main( void ) {
         
         z1[i].announce();
     }
-
     delete [] z1;
 }

@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 01:34:16 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/26 06:11:36 by cereais          ###   ########.fr       */
+/*   Updated: 2025/04/26 06:27:49 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ Zombie::Zombie(std::string name) {
 }
 
 Zombie::Zombie(void) {
+
+	static int N = 0;
+	index = ++N;
 }
 
 Zombie::~Zombie(void) {
 
-	std::cout << name << ": is actually dead?" << std::endl;
+	std::cout << name << "[" << index << "]: is actually dead?" << std::endl;
 }
 
 void	Zombie::setName(std::string name) {
@@ -32,5 +35,5 @@ void	Zombie::setName(std::string name) {
 
 void	Zombie::announce(void) {
 	
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << "[" << index << "]: BraiiiiiiinnnzzzZ..." << std::endl;
 }

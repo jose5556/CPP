@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 01:34:12 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/26 06:15:24 by cereais          ###   ########.fr       */
+/*   Updated: 2025/04/26 06:22:11 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 Zombie* zombieHorde( int N, std::string name ) {
 	
 	Zombie  *arrayZombies;
-
-		
+	
 	try {
 			
 		arrayZombies = new Zombie[N];
