@@ -6,13 +6,13 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:20:15 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/27 01:43:17 by cereais          ###   ########.fr       */
+/*   Updated: 2025/04/27 02:25:46 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Arguments.hpp"
 
-bool	parseArguments(int argc, char **argv, Arguments *arguments) {
+bool	parseArguments(int argc, char **argv) {
 	
 	std::string	fileName;
 	std::string	s1;
@@ -32,24 +32,47 @@ bool	parseArguments(int argc, char **argv, Arguments *arguments) {
 		std::cout << "ERROR! At least one of the arguments is empty." << std::endl;
 		return (false);
 	}
-
-	arguments->setFileName(fileName);
-	arguments->setS1(s1);
-	arguments->setS2(s2);
 	return (true);
+}
+
+std::string	replaceTypeFile(char *file) {
+	
+	std::string delimiter = ".";
+	std::string	fileName = file;
+
+	fileName = fileName.substr(0, fileName.find(delimiter));
+	fileName = fileName.append(".replace");
+
+	return (fileName);
 }
 
 int	main(int argc, char *argv[]) {
 
-	Arguments	arguments;
 	std::string	buffer;
+	std::string	fileNameReplace;
 	
-	if (!parseArguments(argc - 1, argv + 1, &arguments))
+	if (!parseArguments(argc - 1, argv + 1))
 		return (1);
 		
+	fileNameReplace = replaceTypeFile(argv[1]);
+	
 	std::ifstream file(argv[1]);
+	if (!file.is_open()) {
+		std::cout << "ERROR! Could not open input file." << std::endl;
+		return (1);
+	}
+	
+	std::ofstream outfile(fileNameReplace.c_str());
+	if (!outfile.is_open()) {
+        std::cout << "ERROR! Could not create output file." << std::endl;
+        file.close();
+        return (1);
+    }
+
 	while (std::getline(file, buffer)) {
-		std::cout << buffer;
+		outfile << buffer << std::endl;
 	}
 	file.close();
+    outfile.close();
+	return (0);
 }
