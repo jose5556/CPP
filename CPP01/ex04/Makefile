@@ -6,11 +6,11 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/04/27 02:37:10 by cereais          ###   ########.fr        #
+#    Updated: 2025/04/27 02:50:05 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := sed
+NAME     := betterSed
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
