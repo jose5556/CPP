@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 22:45:31 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/04 11:01:50 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/04 11:21:43 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ Fixed	Fixed::operator+(Fixed const& raw) const {
 	return (temp);
 }
 
-Fixed &	Fixed::operator-(Fixed const& raw) const {
+Fixed	Fixed::operator-(Fixed const& raw) const {
 	
 	Fixed	temp;
 
@@ -97,7 +97,7 @@ Fixed &	Fixed::operator-(Fixed const& raw) const {
 	return (temp);
 }
 
-Fixed &	Fixed::operator/(Fixed const& raw) const {
+Fixed	Fixed::operator/(Fixed const& raw) const {
 	
 	Fixed	temp;
 
@@ -105,11 +105,40 @@ Fixed &	Fixed::operator/(Fixed const& raw) const {
 	return (temp);
 }
 
-Fixed &	Fixed::operator*(Fixed const& raw) const {
+Fixed	Fixed::operator*(Fixed const& raw) const {
 	
 	Fixed	temp;
 
 	temp = _fixedPoint * raw._fixedPoint;
+	return (temp);
+}
+
+//increment/decrement operators
+Fixed	Fixed::operator++() {
+	
+	_fixedPoint++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) {
+	
+	Fixed	temp(_fixedPoint);
+
+	_fixedPoint++;
+	return (temp);
+}
+
+Fixed	Fixed::operator--() {
+	
+	_fixedPoint--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int) {
+	
+	Fixed	temp(_fixedPoint);
+
+	_fixedPoint--;
 	return (temp);
 }
 
