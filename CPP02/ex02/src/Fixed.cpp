@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 22:45:31 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/04 11:21:43 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/04 11:58:39 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,50 +30,49 @@ Fixed::~Fixed( void ) {
 }
 
 Fixed& Fixed::operator=(Fixed const& raw) {
-	
-	std::cout << "Copy assignment operator called" << std::endl;
+
 	if (this != &raw)
-	this->_fixedPoint = raw._fixedPoint;
+		this->_fixedPoint = raw._fixedPoint;
 	return (*this);
 }
 
 //comparison operators
-bool	Fixed::operator==(Fixed const& raw) {
+bool	Fixed::operator==(Fixed const& raw) const{
 
 	if (_fixedPoint == raw._fixedPoint)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator!=(Fixed const& raw) {
+bool	Fixed::operator!=(Fixed const& raw) const{
 	
 	if (_fixedPoint != raw._fixedPoint)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator<(Fixed const& raw) {
+bool	Fixed::operator<(Fixed const& raw) const{
 	
 	if (_fixedPoint < raw._fixedPoint)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator<=(Fixed const& raw) {
+bool	Fixed::operator<=(Fixed const& raw) const{
 	
 	if (_fixedPoint <= raw._fixedPoint)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator>(Fixed const& raw) {
+bool	Fixed::operator>(Fixed const& raw) const{
 	
 	if (_fixedPoint > raw._fixedPoint)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator>=(Fixed const& raw) {
+bool	Fixed::operator>=(Fixed const& raw) const{
 	
 	if (_fixedPoint >= raw._fixedPoint)
 		return (true);
@@ -83,34 +82,22 @@ bool	Fixed::operator>=(Fixed const& raw) {
 //arithmetic operators
 Fixed	Fixed::operator+(Fixed const& raw) const {
 	
-	Fixed	temp;
-
-	temp = _fixedPoint + raw._fixedPoint;
-	return (temp);
+	return Fixed(this->toFloat() + raw.toFloat());
 }
 
 Fixed	Fixed::operator-(Fixed const& raw) const {
 	
-	Fixed	temp;
-
-	temp = _fixedPoint - raw._fixedPoint;
-	return (temp);
+	return Fixed(this->toFloat() - raw.toFloat());
 }
 
 Fixed	Fixed::operator/(Fixed const& raw) const {
 	
-	Fixed	temp;
-
-	temp = _fixedPoint / raw._fixedPoint;
-	return (temp);
+	return Fixed(this->toFloat() / raw.toFloat());
 }
 
 Fixed	Fixed::operator*(Fixed const& raw) const {
 	
-	Fixed	temp;
-
-	temp = _fixedPoint * raw._fixedPoint;
-	return (temp);
+	return Fixed(this->toFloat() * raw.toFloat());
 }
 
 //increment/decrement operators
@@ -121,22 +108,22 @@ Fixed	Fixed::operator++() {
 }
 
 Fixed	Fixed::operator++(int) {
-	
-	Fixed	temp(_fixedPoint);
+
+	Fixed	temp(*this);
 
 	_fixedPoint++;
 	return (temp);
 }
 
 Fixed	Fixed::operator--() {
-	
+
 	_fixedPoint--;
 	return (*this);
 }
 
 Fixed	Fixed::operator--(int) {
-	
-	Fixed	temp(_fixedPoint);
+
+	Fixed	temp(*this);
 
 	_fixedPoint--;
 	return (temp);
@@ -144,17 +131,34 @@ Fixed	Fixed::operator--(int) {
 
 //member functions
 float	Fixed::toFloat( void ) const {
-	
+
 	return ((float)_fixedPoint / (1 << _rawBits));
 }
 
 int	Fixed::toInt( void ) const {
-	
+
 	return (_fixedPoint >> _rawBits);
 }
 
+const Fixed&	Fixed::min(Fixed const& n1, Fixed const& n2) {
 
+	return (n1 > n2 ? n2 : n1);
+}
 
+const Fixed&	Fixed::min(Fixed& n1, Fixed& n2) {
+
+	return (n1 > n2 ? n2 : n1);
+}
+
+const Fixed&	Fixed::max(Fixed const& n1, Fixed const& n2) {
+
+	return (n1 < n2 ? n2 : n1);
+}
+
+const Fixed&	Fixed::max(Fixed& n1, Fixed& n2) {
+
+	return (n1 < n2 ? n2 : n1);
+}
 
 //getter/setter
 int	Fixed::getRawBits( void ) const {
