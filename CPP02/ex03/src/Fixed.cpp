@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 22:45:31 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/04 11:58:39 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/05 14:27:49 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,14 +162,12 @@ const Fixed&	Fixed::max(Fixed& n1, Fixed& n2) {
 
 //getter/setter
 int	Fixed::getRawBits( void ) const {
-	
-	std::cout << "getRawBits member function called" << std::endl;
+
 	return (_fixedPoint);
 }
 
 void	Fixed::setRawBits( int const raw ) {
 
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixedPoint = raw;
 }
 
