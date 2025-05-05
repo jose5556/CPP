@@ -6,19 +6,19 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/05/02 00:46:54 by cereais          ###   ########.fr        #
+#    Updated: 2025/05/05 14:33:00 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := fixedPoint
+NAME     := bsp
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/Fixed.cpp
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/Fixed.o
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/Fixed.cpp $(SRC_DIR)/bsp.cpp $(SRC_DIR)/Point.cpp
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/Fixed.o $(OBJ_DIR)/bsp.o $(OBJ_DIR)/Point.o
 
 all: $(NAME)
 
