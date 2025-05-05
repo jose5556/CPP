@@ -6,26 +6,36 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 02:55:34 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/04 11:50:21 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/05 15:04:03 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
+#include "../include/Point.hpp"
 
-int main( void ) {
-	
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
-	
-	return 0;
+#include <iostream>
+
+int main()
+{
+    //Beloved Triangle
+    Point A(0, 0);
+    Point B(5, 0);
+    Point C(0, 5);
+
+    Point P1(1, 1);
+    std::cout << "Test 1 (Inside): " << (bsp(A, B, C, P1) ? "Inside" : "Outside") << std::endl;
+
+    Point P2(5, 5);
+    std::cout << "Test 2 (Outside): " << (bsp(A, B, C, P2) ? "Inside" : "Outside") << std::endl;
+
+    Point P3(2.5, 0);
+    std::cout << "Test 3 (On Edge): " << (bsp(A, B, C, P3) ? "Inside" : "Outside") << std::endl;
+
+    Point P4(0, 0);
+    std::cout << "Test 4 (Vertex): " << (bsp(A, B, C, P4) ? "Inside" : "Outside") << std::endl;
+
+    Point P5(0.01f, 0.01f);
+    std::cout << "Test 5 (Barely Inside): " << (bsp(A, B, C, P5) ? "Inside" : "Outside") << std::endl;
+
+    return 0;
 }
