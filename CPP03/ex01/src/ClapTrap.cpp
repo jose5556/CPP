@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:09:43 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/05 23:24:58 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/06 18:07:42 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 ClapTrap::ClapTrap() {
 
 	this->_name = "Unknown";
-    this->_hitPoints = 10;
-    this->_energyPoints = 10;
-    this->_attackDamage = 0;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 
 	std::cout << "ClapTrap -> " << this->_name 
 	<< " created and ready to kill!" << std::endl;
