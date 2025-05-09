@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 23:30:49 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/06 18:09:35 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/09 18:04:42 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap {
+class ScavTrap : public ClapTrap {
 
 	public:
 		ScavTrap();
@@ -24,4 +24,5 @@ class ScavTrap : ClapTrap {
 		~ScavTrap();
 
 		void guardGate();
+		virtual void attack(const std::string& target);
 };

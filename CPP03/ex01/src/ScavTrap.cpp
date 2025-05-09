@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 23:30:34 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/06 18:10:39 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/09 18:06:14 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap() {
     this->_attackDamage = 20;
 
 	std::cout << "ScavTrap -> " << this->_name 
-	<< " created and is aware of his own individuality!" << std::endl;
+	<< " is also aware of his own individuality!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
@@ -30,13 +30,10 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	this->_attackDamage = 20;
 
 	std::cout << "ScavTrap -> " << this->_name 
-	<< " created and is aware of his own individuality!" << std::endl;
+	<< " is also aware of his own individuality!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) {
-
-	(void)copy;
-	return ;
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
@@ -53,7 +50,23 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 ScavTrap::~ScavTrap() {
 	
 	std::cout << "ScavTrap -> " << this->_name 
-	<< " was shut down!" << std::endl;
+	<< " is no more aware of his own individuality!" << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target) {
+	
+	if (_energyPoints > 0 && _hitPoints > 0) {
+
+		_energyPoints--;
+		std::cout << "ScavTrap " << _name << " attacks " << target <<  
+		" causing " << _attackDamage << " points of damage." << std::endl;
+	} else if (_energyPoints <= 0) {
+		std::cout << "ScavTrap " << _name << " cannot attack because he has no more energy points." 
+		<< std::endl;
+	} else if (_hitPoints <= 0) {
+		std::cout << "ScavTrap " << _name << " cannot attack because he is a bit dead :(" 
+		<< std::endl;
+	}
 }
 
 void ScavTrap::guardGate() {
