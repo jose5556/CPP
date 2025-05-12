@@ -6,19 +6,19 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/05/09 18:27:33 by cereais          ###   ########.fr        #
+#    Updated: 2025/05/12 17:52:51 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := fragTrap
+NAME     := diamondTrap
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/ClapTrap.cpp $(SRC_DIR)/ScavTrap.cpp $(SRC_DIR)/FragTrap.cpp
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/ClapTrap.o $(OBJ_DIR)/ScavTrap.o $(OBJ_DIR)/FragTrap.o
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/ClapTrap.cpp $(SRC_DIR)/ScavTrap.cpp $(SRC_DIR)/FragTrap.cpp $(SRC_DIR)/DiamondTrap.cpp
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/ClapTrap.o $(OBJ_DIR)/ScavTrap.o $(OBJ_DIR)/FragTrap.o $(OBJ_DIR)/DiamondTrap.o
 
 all: $(NAME)
 
