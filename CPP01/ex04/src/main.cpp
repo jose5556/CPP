@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:20:15 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/27 02:40:04 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/13 16:43:41 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	main(int argc, char *argv[]) {
 	
 	if (!inputVerification(argc - 1, argv + 1))
 		return (1);
-		
-	fileNameReplace = replaceTypeFile(argv[1]);
 	
 	std::ifstream file(argv[1]);
 	if (!file.is_open()) {
 		std::cout << "ERROR! Could not open input file." << std::endl;
 		return (1);
 	}
+
+	fileNameReplace = replaceTypeFile(argv[1]);
 	
 	std::ofstream outfile(fileNameReplace.c_str());
 	if (!outfile.is_open()) {

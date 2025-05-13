@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manipulationStrings.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 02:32:58 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/27 04:19:53 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/13 16:44:58 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ std::string	replaceTypeFile(char *file) {
 	std::string delimiter = ".";
 	std::string	fileName = file;
 
+	if (fileName.find(".replace"))
+		return (fileName);
 	fileName = fileName.substr(0, fileName.find(delimiter));
 	fileName = fileName.append(".replace");
 
