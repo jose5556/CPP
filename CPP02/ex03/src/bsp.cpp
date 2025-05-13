@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 12:03:19 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/05 15:08:48 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/13 15:38:17 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Point.hpp"
 
-bool bsp(Point const a, Point const b, Point const c, Point const point)
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	Fixed s1 = c.getY() - a.getY();
 	Fixed s2 = c.getX() - a.getX();
