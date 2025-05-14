@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 08:41:42 by cereais           #+#    #+#             */
-/*   Updated: 2025/04/27 09:07:20 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/14 15:43:20 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,16 @@ void	harldFilter(std::string	str, Harl harl) {
 
 	case DEBUG:
 		harl.complain("DEBUG");
-		harl.complain("INFO");
-		harl.complain("WARNING");
-		harl.complain("ERROR");
-		break ;
+		/* fall through */
 
 	case INFO:
 		harl.complain("INFO");
-		harl.complain("WARNING");
-		harl.complain("ERROR");
-		break ;
+		/* fall through */
 
 	case WARNING:
 		harl.complain("WARNING");
-		harl.complain("ERROR");
-		break ;
-		
+		/* fall through */
+
 	case ERROR:
 		harl.complain("ERROR");
 		break ;
