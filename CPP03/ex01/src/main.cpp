@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:10:06 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/09 18:10:10 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/14 18:56:51 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,16 @@ int	main(void) {
 	
 	ScavTrap	roberto("roberto");
 	ScavTrap	manuel("manuel");
-	//ClapTrap	andre("andre");
 	ScavTrap	shy;
 
 	std::cout << std::endl;
 
-	//test if they can attack until they have no more energy
-	for (int i = 0; i < 5; i++) {
-		roberto.guardGate();
-	}
+	//test if guardGate works as expected
+	roberto.guardGate();
 
 	std::cout << std::endl;
 
-	//test if they can actually die
+	//test if a scavTrap can attack (clapTrap func)
 	for (int j = 0; j < 51; j++) {
 		shy.attack("roberto");
 	}

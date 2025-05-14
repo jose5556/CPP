@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 18:14:24 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/09 18:17:23 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/14 18:57:47 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class FragTrap : public ClapTrap {
 		FragTrap& operator=(const FragTrap& src);
 		~FragTrap();
 
-		void highFivesGuys(void);
+		void	highFivesGuys(void);
 };

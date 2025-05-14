@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:10:06 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/12 18:07:47 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/14 19:09:24 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,34 @@
 
 int	main(void) {
 	
-	DiamondTrap	roberto("roberto");
+	DiamondTrap	zezinho("zezinho");
+
+	std::cout << std::endl;
+
+	//test if DiamondTrap can use FragTrap special ability
+	zezinho.highFivesGuys();
+
+	std::cout << std::endl;
+
+	//test if DiamondTrap can use ScavTrap special ability
+	zezinho.guardGate();
 
 	std::cout << std::endl;
 
 	//test if he can show both names
-	roberto.whoAmI();
+	zezinho.whoAmI();
 
 	std::cout << std::endl;
 
 	//should use ScavTrap attack method
-	roberto.attack("pinguim");
+	zezinho.attack("pinguim");
 
 	std::cout << std::endl;
 
 	//should use ClapTrap take damage method
-	roberto.takeDamage(35);
-	roberto.takeDamage(35);
-	roberto.takeDamage(35);
+	zezinho.takeDamage(35);
+	zezinho.takeDamage(35);
+	zezinho.takeDamage(35);
 
 	std::cout << std::endl;
 

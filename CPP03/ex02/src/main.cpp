@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:10:06 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/09 18:28:13 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/14 18:58:40 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ int	main(void) {
 
 	//test if he can high five you UwU
 	roberto.highFivesGuys();
+
+	//test if a FragTrap can attack (clapTrap func)
+	manuel.attack("roberto"); 
 
 	std::cout << std::endl;
 
