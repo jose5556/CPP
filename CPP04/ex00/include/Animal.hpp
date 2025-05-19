@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:15:21 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/15 20:03:35 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/19 18:43:47 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Animal {
 		Animal();
 		Animal(const Animal& copy);
 		Animal& operator=(const Animal& other);
-		~Animal();
+		virtual ~Animal();
 
 		virtual void makeSound() const;
-		std::string getType();
+		virtual std::string getType() const;
 	
 	protected:
 		std::string	_type;

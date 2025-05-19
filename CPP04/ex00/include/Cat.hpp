@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:12:55 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/15 20:01:38 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/19 18:43:35 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 class Cat : public Animal {
 	
-	Cat();
-	Cat(const Cat& copy);
-	Cat& operator=(const Cat& other);
-	~Cat();
+	public:
+		Cat();
+		Cat(const Cat& copy);
+		Cat& operator=(const Cat& other);
+		~Cat();
 
-	void makeSound() const override;
+	void makeSound() const;
+	std::string getType() const;
 };

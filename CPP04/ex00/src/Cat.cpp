@@ -6,17 +6,18 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:13:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/15 20:02:06 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/19 18:54:36 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Cat.hpp"
 
 Cat::Cat() {
+
 	_type = "cat";
 }
 
-Cat::Cat(const Cat& copy) {
+Cat::Cat(const Cat& copy)  : Animal() {
 
 	*this = copy;
 }
@@ -34,4 +35,9 @@ Cat::~Cat(){
 void	Cat::makeSound() const {
 
 	std::cout << "Meow! UwU" << std::endl;
+}
+
+std::string Cat::getType() const {
+	
+	return (this->_type);
 }
