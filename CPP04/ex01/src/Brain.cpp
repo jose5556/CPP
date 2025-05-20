@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/14 17:12:53 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/20 17:31:50 by cereais          ###   ########.fr       */
+/*   Created: 2025/05/20 16:48:33 by cereais           #+#    #+#             */
+/*   Updated: 2025/05/20 17:49:00 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "../include/Brain.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Dog : public Animal {
+Brain::Brain() {
 	
-	public:
-		Dog();
-		Dog(const Dog& copy);
-		Dog& operator=(const Dog& other);
-		~Dog();
+	std::cout << "Brain constructor called" << std::endl;
+}
 
-		void makeSound() const;
-		std::string getType() const;
+Brain::~Brain() {
+	
+	std::cout << "Brain destructor called" << std::endl;
+}
 
-	private:
-		Brain* _brain;
-};
+Brain::Brain(const Brain& copy) {
+	
+	*this = copy;
+}
+
+Brain& Brain::operator=(const Brain& src) {
+
+	if (&src != this) {
+			
+		*this->ideas = *src.ideas;
+	}
+	return (*this);
+}

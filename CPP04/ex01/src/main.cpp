@@ -6,22 +6,40 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:14:46 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 16:42:56 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/20 17:45:06 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Animal.hpp"
 #include "../include/Cat.hpp"
 #include "../include/Dog.hpp"
-#include "../include/WrongAnimal.hpp"
-#include "../include/WrongCat.hpp"
 
 int main() {
 
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
+	int		size = 10;
+	Animal*	animals[10];
 
+	std::cout << "\n--- Creating animals ---\n" << std::endl;
+
+	// Fill first half with Dogs
+	for (int i = 0; i < size / 2; ++i)
+		animals[i] = new Dog();
+
+	// Fill second half with Cats
+	for (int i = size / 2; i < size; ++i)
+		animals[i] = new Cat();
+
+	std::cout << "\n--- Deleting animals ---\n" << std::endl;
+		
+	for (int i = 0; i < size; ++i)
+		delete animals[i];
+		
+	std::cout << "\n--- Deep copy test ---\n" << std::endl;
+
+	Dog basic;
+	{
+		Dog copy = basic; // Calls copy constructor
+	}
+	
 	return 0;
 }

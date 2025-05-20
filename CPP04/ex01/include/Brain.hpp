@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/14 17:12:53 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/20 17:31:50 by cereais          ###   ########.fr       */
+/*   Created: 2025/05/20 16:47:24 by cereais           #+#    #+#             */
+/*   Updated: 2025/05/20 17:07:28 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <string>
 
-class Dog : public Animal {
-	
+class Brain {
+
 	public:
-		Dog();
-		Dog(const Dog& copy);
-		Dog& operator=(const Dog& other);
-		~Dog();
+		Brain();
+		~Brain();
+		Brain(const Brain& copy);
+		Brain& operator=(const Brain& src);
 
-		void makeSound() const;
-		std::string getType() const;
-
-	private:
-		Brain* _brain;
+	protected:
+		std::string ideas[100];
 };
