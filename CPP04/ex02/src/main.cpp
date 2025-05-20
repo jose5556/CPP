@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:14:46 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 17:45:06 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/20 18:31:01 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main() {
 
 	int		size = 10;
 	Animal*	animals[10];
+
+	//Animal a;
 
 	std::cout << "\n--- Creating animals ---\n" << std::endl;
 
