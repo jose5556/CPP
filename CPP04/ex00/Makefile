@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
+#    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/05/14 17:15:25 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/05/20 16:11:26 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/Animal.cpp $(SRC_DIR)/Cat.cpp $(SRC_DIR)/Dog.cpp
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/Animal.o $(OBJ_DIR)/Cat.o $(OBJ_DIR)/Dog.o
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/Animal.cpp $(SRC_DIR)/Cat.cpp $(SRC_DIR)/Dog.cpp $(SRC_DIR)/WrongCat.cpp $(SRC_DIR)/WrongAnimal.cpp
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/Animal.o $(OBJ_DIR)/Cat.o $(OBJ_DIR)/Dog.o $(OBJ_DIR)/WrongCat.o $(OBJ_DIR)/WrongAnimal.o
 
 all: $(NAME)
 

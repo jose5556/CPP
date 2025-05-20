@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongWrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/14 17:13:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/20 16:08:29 by cereais          ###   ########.fr       */
+/*   Created: 2025/05/20 15:51:27 by cereais           #+#    #+#             */
+/*   Updated: 2025/05/20 15:59:22 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+#include "../include/WrongCat.hpp"
 
-Cat::Cat() : Animal() {
+WrongCat::WrongCat() : WrongAnimal(){
 
-	_type = "cat";
+	_type = "WrongCat";
 }
 
-Cat::Cat(const Cat& copy) : Animal() {
+WrongCat::WrongCat(const WrongCat& copy) : WrongAnimal() {
 
 	*this = copy;
 }
 
-Cat& Cat::operator=(const Cat& copy) {
+WrongCat& WrongCat::operator=(const WrongCat& copy) {
 
 	if (&copy != this)
 		this->_type = copy._type;
 	return (*this);
 }
 
-Cat::~Cat(){
+WrongCat::~WrongCat(){
 }
 
-void	Cat::makeSound() const {
-
-	std::cout << "Meow! UwU" << std::endl;
-}
-
-std::string Cat::getType() const {
-	
-	return (this->_type);
+void WrongCat::makeSound(void) const
+{
+	std::cout << "WrongCat sound?" << std::endl;
 }
