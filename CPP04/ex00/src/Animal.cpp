@@ -6,13 +6,15 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:13:44 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/19 18:50:51 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/20 18:15:39 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Animal.hpp"
 
 Animal::Animal() : _type("") {
+
+	std::cout << "Animal constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal& copy) {
@@ -27,7 +29,9 @@ Animal& Animal::operator=(const Animal& copy) {
 	return (*this);
 }
 
-Animal::~Animal(){
+Animal::~Animal() {
+
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 void	Animal::makeSound() const{
