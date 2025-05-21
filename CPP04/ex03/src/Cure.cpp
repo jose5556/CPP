@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:39:18 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 18:39:19 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:08:36 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/Cure.hpp"

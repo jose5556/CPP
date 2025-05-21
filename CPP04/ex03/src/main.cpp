@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:34:06 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 18:49:20 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:09:39 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int main() {
 	delete src;
 	return 0;
 }
-
-
 
 //what is concrete class
 //what is interface class

@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:39:22 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 18:39:23 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:08:42 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/Ice.hpp"

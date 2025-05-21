@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:41:16 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 18:42:45 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:07:15 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#pragma once
+
 #include "AMateria.hpp"
+#include <iostream>
+#include <string>
 
 class ICharacter {
 

@@ -1,17 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 18:47:14 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/21 17:17:53 by joseoliv         ###   ########.fr       */
+/*   Created: 2025/05/20 18:41:30 by cereais           #+#    #+#             */
+/*   Updated: 2025/05/21 17:09:07 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <string>
-#include <iostream>
-
+#include "../include/ICharacter.hpp"
