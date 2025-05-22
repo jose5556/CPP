@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:38:21 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/22 19:35:39 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:44:31 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class Ice : public AMateria {
 		Ice& operator=(const Ice& src);
 
 		AMateria* clone() const;
+		void use(ICharacter& target);
 };

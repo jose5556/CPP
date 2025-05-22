@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 17:07:27 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/22 19:30:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:44:27 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class Cure : public AMateria {
 		Cure& operator=(const Cure& src);
 
 		AMateria* clone() const;
+		void use(ICharacter& target);
 };

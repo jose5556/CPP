@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:39:18 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/22 19:41:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:44:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,10 @@ Cure& Cure::operator=(const Cure& src) {
 AMateria* Cure::clone() const {
 	
 	return (new Cure());
+}
+
+void AMateria::use(ICharacter& target) {
+
+	std::cout << "Cure: \"* heals "
+	<< target.getName() << "'s wounds *\"";
 }
