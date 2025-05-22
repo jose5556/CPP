@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 18:34:06 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/21 17:09:39 by joseoliv         ###   ########.fr       */
+/*   Created: 2025/05/20 18:34:06 by joseoliv           #+#    #+#             */
+/*   Updated: 2025/05/22 19:57:04 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/AMateria.hpp"
 #include "../include/Cure.hpp"
 #include "../include/Ice.hpp"
-#include "../include/ICharacter.hpp"
-#include "../include/IMateriaSource.hpp"
+#include "../include/Character.hpp"
+#include "../include/MateriaSource.hpp"
 
 int main() {
 	

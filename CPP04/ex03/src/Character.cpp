@@ -5,14 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 18:41:30 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/22 17:53:40 by joseoliv         ###   ########.fr       */
+/*   Created: 2025/05/20 18:41:30 by joseoliv           #+#    #+#             */
+/*   Updated: 2025/05/22 20:11:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Character.hpp"
 
-Character::Character() {}
+Character::Character() {
+
+	_name = "Unknown";
+	for (int i = 0; i < 4; i++) {
+		_inventory[i] = nullptr; //NULL
+	}
+}
 
 Character::Character(std::string name) : _name(name) {
 
@@ -27,8 +33,10 @@ Character::Character(const Character& copy) {
 	
 	_name = copy._name;
 	for (int i = 0; i < 4; i++) {
-		if (copy._inventory[i])
+		if (copy._inventory[i]) {
+			delete (_inventory[i]);
 			_inventory[i] = copy._inventory[i]->clone();
+		}
 		else 
 			_inventory[i] = nullptr;
 	}
@@ -59,6 +67,10 @@ std::string const & Character::getName() const {
 
 void Character::equip(AMateria* m) {
 	
+	for (int i = 0; i < 4; i++) {
+		if (!_inventory[i])
+			_inventory[i] = m;
+	}
 }
 
 void Character::unequip(int idx) {
@@ -67,4 +79,7 @@ void Character::unequip(int idx) {
 
 void Character::use(int idx, ICharacter& target) {
 	
+	if (!_inventory[idx])
+		return ;
+	_inventory[idx]->use(target);
 }

@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:09:47 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/22 17:17:52 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:22:03 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class MateriaSource : public IMateriaSource {
 		MateriaSource(const MateriaSource& copy);
 		MateriaSource& operator=(const MateriaSource& src);
 
-		void learnMateria(AMateria*);
-		void learnMateria(AMateria*);
+		void learnMateria(AMateria* materia);
 		AMateria* createMateria(std::string const & type);
 };
