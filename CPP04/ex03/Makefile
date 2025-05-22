@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
+#    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/05/20 18:52:26 by cereais          ###   ########.fr        #
+#    Updated: 2025/05/22 18:31:20 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := brain
+NAME     := game
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
