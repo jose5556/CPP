@@ -12,7 +12,11 @@
 
 #include "../include/MateriaSource.hpp"
 
-MateriaSource::MateriaSource() {}
+MateriaSource::MateriaSource() {
+
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = nullptr;
+}
 
 MateriaSource::~MateriaSource() {};
 
@@ -27,9 +31,18 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& src) {
 
 void MateriaSource::learnMateria(AMateria* materia) {
 	
-	AMateria* materiaLearned = materia->clone();
+	for (int i = 0; i < 4; i++) {
+		if (_inventory)
+			_inventory[i] = materia;
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
 	
+	if (type == "cure") {
+
+	} else if (type == "ice") {
+
+	} else
+		return (NULL);
 }

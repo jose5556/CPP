@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:09:47 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/22 20:22:03 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:28:22 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@ class MateriaSource : public IMateriaSource {
 
 		void learnMateria(AMateria* materia);
 		AMateria* createMateria(std::string const & type);
+
+	private:
+		AMateria*	_inventory[4];
 };
