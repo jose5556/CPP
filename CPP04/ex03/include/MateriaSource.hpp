@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 18:47:14 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/22 17:10:27 by joseoliv         ###   ########.fr       */
+/*   Created: 2025/05/22 17:09:47 by joseoliv          #+#    #+#             */
+/*   Updated: 2025/05/22 17:17:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
+#include <iostream>
 
-class IMateriaSource {
-	
+class MateriaSource : public IMateriaSource {
+
 	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		MateriaSource();
+		~MateriaSource();
+		MateriaSource(const MateriaSource& copy);
+		MateriaSource& operator=(const MateriaSource& src);
+
+		void learnMateria(AMateria*);
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
