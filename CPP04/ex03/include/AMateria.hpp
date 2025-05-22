@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:36:17 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/21 18:49:32 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:42:48 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 #include <string>
 #include <iostream>
-#include <ICharacter.hpp>
+#include <new>
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
 
 class AMateria {
 	
