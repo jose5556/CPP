@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:41:30 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/22 17:40:55 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/22 17:53:40 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@ Character::Character(const Character& copy) {
 
 Character& Character::operator=(const Character& src) {
 	
+	if (&src != this) {
+		_name = src._name;
+		for (int i = 0; i < 4; i++) {
+			delete(_inventory[i]);
+			_inventory[i] = nullptr;
+		}
+		for (int i = 0; i < 4; i++) {
+			if (src._inventory[i])
+				this->_inventory[i] = src._inventory[i]->clone();
+			else
+				this->_inventory[i] = nullptr;
+		}
+	}
+	return (*this);
 }
 
 std::string const & Character::getName() const {
