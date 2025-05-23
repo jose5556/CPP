@@ -15,6 +15,7 @@
 Character::Character() {
 
 	_name = "Unknown";
+	_trash = NULL;
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
@@ -22,6 +23,7 @@ Character::Character() {
 
 Character::Character(std::string name) : _name(name) {
 
+	_trash = NULL;
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
@@ -34,7 +36,7 @@ Character::~Character(){
 			delete (_inventory[i]);
 	}
 
-	t_list* tmp;
+	t_list*	tmp;
 	while (_trash) {
 		delete _trash->content;
 		tmp = _trash;
@@ -82,9 +84,12 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
 	
 	for (int i = 0; i < 4; i++) {
-		if (!_inventory[i])
+		if (!(_inventory[i])) {
 			_inventory[i] = m;
+			return ;
+		}
 	}
+	delete (m);
 }
 
 void Character::unequip(int idx) {
@@ -101,8 +106,11 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
+
 	
-	if (!_inventory[idx])
-		return ;
-	_inventory[idx]->use(target);
+    if ( idx >= 0 && idx < 4 )
+    {
+        if (this->_inventory[idx])
+            this->_inventory[idx]->use(target);
+    }
 }
