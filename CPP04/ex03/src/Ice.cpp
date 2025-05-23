@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/Ice.hpp"
+#include "../include/ICharacter.hpp"
 
 Ice::Ice() {
 
@@ -19,7 +20,9 @@ Ice::Ice() {
 
 Ice::~Ice() {}
 
-Ice::Ice(const Ice& copy) {
+Ice::Ice(const Ice& copy) : AMateria() {
+
+	(void)copy;
 }
 
 Ice& Ice::operator=(const Ice& src) {
@@ -33,7 +36,7 @@ AMateria* Ice::clone() const {
 	return (new Ice());
 }
 
-void AMateria::use(ICharacter& target) {
+void Ice::use(ICharacter& target) {
 
 	std::cout << "Ice: \"* shoots an ice bolt at "
 	<< target.getName() << " *\"";

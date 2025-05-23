@@ -14,6 +14,8 @@
 
 #include <string>
 
+class AMateria;
+
 class IMateriaSource {
 	
 	public:

@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:06:00 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/22 17:25:55 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:27:28 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "game.h"
 
 class Character : public ICharacter {
 	
@@ -32,4 +33,5 @@ class Character : public ICharacter {
 		private: 
 			std::string _name;
 			AMateria*	_inventory[4];
+			t_list*		_trash;
 };

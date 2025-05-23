@@ -14,16 +14,15 @@
 
 #include <string>
 #include <iostream>
-#include <new>
-#include "ICharacter.hpp"
-#include "MateriaSource.hpp"
+
+class ICharacter;
 
 class AMateria {
 	
 	public:
 		AMateria();
 		AMateria(std::string const & type);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria(const AMateria& copy);
 		AMateria& operator=(const AMateria& src);
 		

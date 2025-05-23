@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 17:07:27 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/23 16:10:08 by joseoliv         ###   ########.fr       */
+/*   Created: 2025/05/23 15:16:48 by joseoliv          #+#    #+#             */
+/*   Updated: 2025/05/23 15:31:27 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef GAME_H
+# define GAME_H
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria {
-	
-	public:
-		Cure();
-		~Cure();
-		Cure(const Cure& copy);
-		Cure& operator=(const Cure& src);
+typedef struct s_list
+{
+	AMateria		*content;
+	struct s_list	*next;
+}	t_list;
 
-		AMateria* clone() const;
-		void use(ICharacter& target);
-};
+#endif

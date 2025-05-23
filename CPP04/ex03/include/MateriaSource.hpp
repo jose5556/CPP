@@ -6,15 +6,16 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:09:47 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/22 20:28:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/05/23 16:06:09 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <string>
 #include "IMateriaSource.hpp"
-#include "AMateria.hpp"
-#include <iostream>
+
+class AMateria;
 
 class MateriaSource : public IMateriaSource {
 

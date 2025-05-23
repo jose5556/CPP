@@ -16,18 +16,32 @@ Character::Character() {
 
 	_name = "Unknown";
 	for (int i = 0; i < 4; i++) {
-		_inventory[i] = nullptr; //NULL
+		_inventory[i] = NULL;
 	}
 }
 
 Character::Character(std::string name) : _name(name) {
 
 	for (int i = 0; i < 4; i++) {
-		_inventory[i] = nullptr; //NULL
+		_inventory[i] = NULL;
 	}
 }
 
-Character::~Character(){}
+Character::~Character(){
+
+	for (int i = 0; i < 4; i++) {
+		if (_inventory[i])
+			delete (_inventory[i]);
+	}
+
+	t_list* tmp;
+	while (_trash) {
+		delete _trash->content;
+		tmp = _trash;
+		_trash = _trash->next;
+		delete (tmp);
+	}
+}
 
 Character::Character(const Character& copy) {
 	
@@ -38,7 +52,7 @@ Character::Character(const Character& copy) {
 			_inventory[i] = copy._inventory[i]->clone();
 		}
 		else 
-			_inventory[i] = nullptr;
+			_inventory[i] = NULL;
 	}
 }
 
@@ -48,13 +62,13 @@ Character& Character::operator=(const Character& src) {
 		_name = src._name;
 		for (int i = 0; i < 4; i++) {
 			delete(_inventory[i]);
-			_inventory[i] = nullptr;
+			_inventory[i] = NULL;
 		}
 		for (int i = 0; i < 4; i++) {
 			if (src._inventory[i])
 				this->_inventory[i] = src._inventory[i]->clone();
 			else
-				this->_inventory[i] = nullptr;
+				this->_inventory[i] = NULL;
 		}
 	}
 	return (*this);
@@ -75,6 +89,15 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
 	
+	if (idx < 0 || idx > 3 || !_inventory[idx])
+		return;
+
+	t_list* new_node = new t_list;
+	new_node->content = _inventory[idx];
+	new_node->next = _trash;
+	_trash = new_node;
+
+	_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target) {

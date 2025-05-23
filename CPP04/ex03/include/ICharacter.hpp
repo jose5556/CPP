@@ -15,6 +15,8 @@
 #include <iostream>
 #include <string>
 
+class AMateria;
+
 class ICharacter {
 
 	public:

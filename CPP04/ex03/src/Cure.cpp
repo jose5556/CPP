@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/Cure.hpp"
+#include "../include/ICharacter.hpp"
 
 Cure::Cure() {
 
@@ -19,7 +20,9 @@ Cure::Cure() {
 
 Cure::~Cure() {}
 
-Cure::Cure(const Cure& copy) {
+Cure::Cure(const Cure& copy) : AMateria() {
+
+	(void)copy;
 }
 
 Cure& Cure::operator=(const Cure& src) {
@@ -33,7 +36,7 @@ AMateria* Cure::clone() const {
 	return (new Cure());
 }
 
-void AMateria::use(ICharacter& target) {
+void Cure::use(ICharacter& target) {
 
 	std::cout << "Cure: \"* heals "
 	<< target.getName() << "'s wounds *\"";

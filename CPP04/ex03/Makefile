@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/05/22 18:31:20 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/05/23 16:13:36 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,15 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC_DIR  := src
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/AMateria.cpp $(SRC_DIR)/Cure.cpp $(SRC_DIR)/Ice.cpp $(SRC_DIR)/IChacacter.cpp $(SRC_DIR)/IMateriaSource.cpp
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/AMateria.o $(OBJ_DIR)/Cure.o $(OBJ_DIR)/Ice.o $(OBJ_DIR)/IChacacter.o $(OBJ_DIR)/IMateriaSource.o
+SRCS     := $(SRC_DIR)/main.cpp \
+			$(SRC_DIR)/AMateria.cpp $(SRC_DIR)/Cure.cpp $(SRC_DIR)/Ice.cpp \
+			$(SRC_DIR)/Character.cpp \
+			$(SRC_DIR)/MateriaSource.cpp \
+
+OBJS     := $(OBJ_DIR)/main.o \
+			$(OBJ_DIR)/AMateria.o $(OBJ_DIR)/Cure.o $(OBJ_DIR)/Ice.o \
+			$(OBJ_DIR)/Character.o \
+			$(OBJ_DIR)/MateriaSource.o \
 
 all: $(NAME)
 
