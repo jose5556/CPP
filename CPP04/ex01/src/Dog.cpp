@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:13:40 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/05/20 17:36:56 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/23 17:03:33 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Dog::Dog(const Dog& copy) : Animal() {
 Dog& Dog::operator=(const Dog& copy) {
 
 	if (&copy != this) {
-		
 		Animal::operator=(copy);
 		delete (_brain);
 		_brain = new Brain(*copy._brain);

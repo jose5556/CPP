@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:14:46 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/20 17:45:06 by cereais          ###   ########.fr       */
+/*   Updated: 2025/05/23 17:00:28 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ int main() {
 		
 	std::cout << "\n--- Deep copy test ---\n" << std::endl;
 
-	Dog basic;
+	Dog dogo;
 	{
-		Dog copy = basic; // Calls copy constructor
+		std::cout << "\n--- inside scope ---\n" << std::endl;
+		Dog copy = dogo; // Calls copy constructor
 	}
+	std::cout << "\n--- after scope ---\n" << std::endl;
 	
 	return 0;
 }
