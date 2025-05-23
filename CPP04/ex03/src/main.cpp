@@ -18,28 +18,54 @@
 
 int main() {
 	
+	std::cout << "\n------------------------------------" <<std::endl;
+	std::cout << "Subject tests" <<std::endl;
+	std::cout << "------------------------------------\n" <<std::endl;
+
 	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+    src->learnMateria( new Ice() );
+    src->learnMateria( new Cure() );
 
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
+    ICharacter* me = new Character("me");
 
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip( tmp );
+    tmp = src->createMateria("cure");
+    me->equip( tmp );
 
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+    ICharacter* bob = new Character("bob");
 
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
+    me->use( 0, *bob );
+    me->use( 1, *bob );
 
-	delete bob;
-	delete me;
-	delete src;
-	return 0;
+	std::cout << "\n------------------------------------" <<std::endl;
+	std::cout << "My tests" <<std::endl;
+	std::cout << "------------------------------------\n" <<std::endl;
+
+    me->unequip(1);
+    Character ze( "ze" );
+    Character bino( "bino");
+
+    ze.equip(src->createMateria("ice"));
+    ze.equip(src->createMateria("cure"));
+
+    bino = ze;
+    bino.use(0, *bob);
+    bino.use(1, *bob);
+    bino.unequip(0);
+    bino.use(0, *bob);
+    bino.unequip(1);
+    bino.equip(src->createMateria("cure"));
+    bino.equip(src->createMateria("cure"));
+    bino.equip(src->createMateria("cure"));
+    bino.unequip(0);
+    bino.unequip(1);
+    bino.unequip(2);
+    
+
+    delete (bob);
+    delete (me);
+    delete (src);
+    return (0);
 }
-
-//what is concrete class
-//what is interface class
