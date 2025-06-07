@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:06:07 by cereais           #+#    #+#             */
-/*   Updated: 2025/06/03 23:52:18 by cereais          ###   ########.fr       */
+/*   Updated: 2025/06/07 17:43:38 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
+#include "../include/Form.hpp"
 
 Bureaucrat::Bureaucrat(void) {
 	this->_grade = 75;
@@ -72,4 +73,17 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& grade) {
 	
 	out << grade.getName() << ", bureaucrat grade " << grade.getGrade() << ".";
 	return (out);
+}
+
+void Bureaucrat::signForm(Form& form) {
+
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl; 
+    }
 }

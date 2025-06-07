@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:25:15 by cereais           #+#    #+#             */
-/*   Updated: 2025/06/03 23:49:43 by cereais          ###   ########.fr       */
+/*   Updated: 2025/06/07 17:37:00 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#pragma once
+
 #include "Bureaucrat.hpp"
 
 class Form {
 
 public:
 	Form();
-	Form(std::string name);
+	Form(std::string name, int gradeSigned, int gradeExec);
 	~Form();
 	Form(const Form& copy);
 	Form& operator=(const Form& src);

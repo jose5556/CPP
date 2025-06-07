@@ -3,42 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:05:03 by cereais           #+#    #+#             */
-/*   Updated: 2025/05/26 18:48:29 by cereais          ###   ########.fr       */
+/*   Updated: 2025/06/07 17:45:58 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/Form.hpp"
 #include "../include/Bureaucrat.hpp"
 
-int main(void) {
-	
-	try
+int main()
+{
+    try
     {
-        Bureaucrat first(150, "first");
-        std::cout << first << std::endl;
-        first.addGrade();
-        std::cout << first << std::endl;
-        first.decrementGrade();
-        std::cout << first << std::endl;
-        first.decrementGrade();
+        Bureaucrat quim(30, "Quim");
+        std::cout << quim << std::endl;
+        Form person("person", 50, 50);
+        std::cout << person << std::endl;
+        quim.signForm(person);
+        std::cout << person << std::endl;
     }
-    catch (const std::exception &e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
     try
     {
-        Bureaucrat second(160, "second");
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        Bureaucrat third(0, "third");
+        std::cout << std::endl;
+        Bureaucrat manuel(60, "manuel");
+        std::cout << manuel << std::endl;
+        Form paper("paper", 50, 50);
+        std::cout << paper << std::endl;
+        manuel.signForm(paper);
     }
     catch(const std::exception& e)
     {
