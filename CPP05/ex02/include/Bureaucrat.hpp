@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:06:04 by cereais           #+#    #+#             */
-/*   Updated: 2025/06/07 17:50:50 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/07 18:41:50 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ public:
 	void		addGrade(void);
 	void		decrementGrade(void);
 	void		signForm(AForm &form);
+
+	void executeForm(AForm const & form);
 
 	class GradeTooHighException : public std::exception {
 		
