@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 17:52:28 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/07 18:58:18 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/07 19:19:49 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ PresidentialPardonForm::PresidentialPardonForm()
 
 }
 
+PresidentialPardonForm::~PresidentialPardonForm() {}
+
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) 
 	: AForm("PresidentialPardonForm", target, 25, 5) {
 
     std::cout << this->getName() << " created" << std::endl;
 }
-
-PresidentialPardonForm::~PresidentialPardonForm() {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) 
 	: AForm(other.getName(), other.getTarget(), other.getGradeSign(), other.getGradeExec()) {
