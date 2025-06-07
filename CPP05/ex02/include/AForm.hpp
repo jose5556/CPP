@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,14 +14,14 @@
 
 #include "Bureaucrat.hpp"
 
-class Form {
+class AForm {
 
 public:
-	Form();
-	Form(std::string name, int gradeSigned, int gradeExec);
-	~Form();
-	Form(const Form& copy);
-	Form& operator=(const Form& src);
+	AForm();
+	AForm(std::string name, int gradeSigned, int gradeExec);
+	virtual ~AForm();
+	AForm(const AForm& copy);
+	AForm& operator=(const AForm& src);
 
 	std::string	getName() const;
 	bool		getSigned() const;
@@ -29,6 +29,8 @@ public:
 	int			getGradeExec() const;
 
 	void		beSigned(Bureaucrat& bureaucrat);
+
+	virtual void action() const = 0;
 	
 	class GradeTooHighException : public std::exception {
 		
@@ -50,4 +52,4 @@ private:
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& form);
+std::ostream& operator<<(std::ostream& out, const AForm& AForm);
