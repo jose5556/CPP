@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/06/07 19:24:15 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/06/10 01:16:05 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS     := $(SRC_DIR)/main.cpp \
 			$(SRC_DIR)/PresidentialPardonForm.cpp \
 			$(SRC_DIR)/RobotomyRequestForm.cpp \
 			$(SRC_DIR)/ShrubberyCreationForm.cpp \
-			$(SRC_DIR)/intern.cpp \
+			$(SRC_DIR)/Intern.cpp \
 
 OBJS     := $(OBJ_DIR)/main.o \
 			$(OBJ_DIR)/Bureaucrat.o \
@@ -31,7 +31,7 @@ OBJS     := $(OBJ_DIR)/main.o \
 			$(OBJ_DIR)/PresidentialPardonForm.o \
 			$(OBJ_DIR)/RobotomyRequestForm.o \
 			$(OBJ_DIR)/ShrubberyCreationForm.o \
-			$(OBJ_DIR)/intern.o \
+			$(OBJ_DIR)/Intern.o \
 
 all: $(NAME)
 
