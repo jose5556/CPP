@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 17:51:40 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/07 18:55:54 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/10 01:42:31 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,4 @@ void ShrubberyCreationForm::action() const {
 	      ||\n\
 	      ||\n\
 	--------------------------" << std::endl;
-
 }
