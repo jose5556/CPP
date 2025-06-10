@@ -6,11 +6,11 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/06/10 04:36:32 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/06/10 06:14:09 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := converter
+NAME     := convert
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
@@ -24,6 +24,7 @@ SRCS     := $(SRC_DIR)/main.cpp \
 
 OBJS     := $(OBJ_DIR)/main.o \
 			$(OBJ_DIR)/ScalarConverter.o \
+			$(OBJ_DIR)/converter.o \
 			$(OBJ_DIR)/checkType.o \
 
 all: $(NAME)
