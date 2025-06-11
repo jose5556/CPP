@@ -6,11 +6,11 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/06/10 06:14:09 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/06/11 01:24:50 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := convert
+NAME     := serialization
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
@@ -18,14 +18,10 @@ SRC_DIR  := src
 OBJ_DIR  := obj
 
 SRCS     := $(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/ScalarConverter.cpp \
-			$(SRC_DIR)/converter.cpp \
-			$(SRC_DIR)/checkType.cpp \
+			$(SRC_DIR)/Serializer.cpp \
 
 OBJS     := $(OBJ_DIR)/main.o \
-			$(OBJ_DIR)/ScalarConverter.o \
-			$(OBJ_DIR)/converter.o \
-			$(OBJ_DIR)/checkType.o \
+			$(OBJ_DIR)/Serializer.o \
 
 all: $(NAME)
 
