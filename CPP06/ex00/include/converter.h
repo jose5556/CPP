@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 03:17:32 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/11 00:49:56 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 04:00:37 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 #include <math.h>
 #include <float.h>
 
-#define ERRORARGUMENTS "ERROR! Wrong number of arguments"
-#define NOARGUMENTMATCH "ERROR! Invalid argument type"
+#define ERRORARGUMENTS "ERROR! Wrong number of arguments."
+#define NOARGUMENTMATCH "ERROR! Invalid argument type."
+#define EMPTYARGUMENTERROR "ERROR! It apears the argument is empy."
 
 enum Type {
 
