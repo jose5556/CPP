@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 04:36:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/10 05:19:53 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 00:56:16 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ bool	isFloat(const std::string &argument) {
 	float	result = 0.0f;
 	size_t	i = 0;
 
+	if (argument == "-inff" || argument == "inff" || argument == "nanf")
+		return (true);
 	if (argument[0] == '-' || argument[0] == '+')
 		i++;
 	while (i < argument.length()) {
@@ -70,6 +72,8 @@ bool	isDouble(const std::string &argument) {
 	double	result = 0.0;
 	size_t	i = 0;
 
+	if (argument == "-inf" || argument == "inf" || argument == "nan")
+		return (true);
 	if (argument[0] == '-' || argument[0] == '+')
 		i++;
 	while (i < argument.length()) {

@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 02:53:11 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/10 06:15:29 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 00:52:05 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,22 @@ void	ScalarConverter::convert(const std::string &argument) {
 	switch (type) {
 		
 		case CHAR:
+			std::cout << "It's a char." << std::endl;
 			charTransform(argument);
 			break ;
 
 		case INT:
+			std::cout << "It's an int." << std::endl;
 			intTransform(argument);
 			break ;
 
 		case FLOAT:
+			std::cout << "It's a float." << std::endl;
 			floatTransform(argument);
 			break ;
 
 		case DOUBLE:
+			std::cout << "It's a double." << std::endl;
 			doubleTransform(argument);
 			break;
 
