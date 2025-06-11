@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 02:42:05 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/11 02:44:08 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 02:55:42 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 class Base {
 	
-	virtual ~Base();
+	public:
+		virtual ~Base();
 };

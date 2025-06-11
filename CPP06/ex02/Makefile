@@ -6,11 +6,11 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/06/11 02:48:41 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/06/11 03:42:39 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := typeinfo
+NAME     := types
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
@@ -18,8 +18,10 @@ SRC_DIR  := src
 OBJ_DIR  := obj
 
 SRCS     := $(SRC_DIR)/main.cpp \
+			$(SRC_DIR)/Base.cpp \
 
 OBJS     := $(OBJ_DIR)/main.o \
+			$(OBJ_DIR)/Base.o \
 
 all: $(NAME)
 

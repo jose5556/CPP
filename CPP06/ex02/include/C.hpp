@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 02:45:43 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/11 02:45:48 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 02:56:15 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,4 @@
 
 #include "Base.hpp"
 
-class C : public Base {
-	
-};
+class C : public Base {};
