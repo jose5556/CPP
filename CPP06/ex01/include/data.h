@@ -6,10 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 01:16:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/11 01:23:20 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 01:47:25 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef DATA_H
+# define DATA_H
 
-struct Data { int x; };
+struct Data { int thisIsSomething; };
+
+#endif

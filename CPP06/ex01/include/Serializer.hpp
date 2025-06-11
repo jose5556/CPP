@@ -6,14 +6,14 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 01:06:19 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/06/11 01:19:36 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/06/11 01:49:45 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
-#include <cstdint>
+#include <stdint.h>
+#include <iostream>
 #include "data.h"
 
 class Serializer {
