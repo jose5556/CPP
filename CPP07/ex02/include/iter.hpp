@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 10:58:13 by cereais           #+#    #+#             */
-/*   Updated: 2025/06/28 12:57:47 by cereais          ###   ########.fr       */
+/*   Created: 2025/06/28 11:12:48 by cereais           #+#    #+#             */
+/*   Updated: 2025/06/28 12:59:11 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/iter.hpp"
+#include <string>
+#include <iostream>
+#include <cctype>
 
-void	printWord(char c) {
-	std::cout << c << std::endl;
-}
-
-int main(void) {
+template <typename T, typename I, typename F>
+void	iter(T a[], I b, void(*f)(F)) {
 	
-	const char a = 'a';
-	const char b = 'b';
-	const char c = 'c';
+	I len = 0;
 
-	char arr[4] = {a, b, c};
-
-	iter(arr, 3, &printWord);
+	while (len < b) {
+		f(a[len]);
+		len++;
+	}
 }
-

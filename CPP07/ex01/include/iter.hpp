@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:12:48 by cereais           #+#    #+#             */
-/*   Updated: 2025/06/28 11:18:08 by cereais          ###   ########.fr       */
+/*   Updated: 2025/06/28 12:59:11 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <cctype>
 
-template <typename T>
-void	swap(T &a, T &b) {
+template <typename T, typename I, typename F>
+void	iter(T a[], I b, void(*f)(F)) {
 	
-	T c = a;
+	I len = 0;
 
-	a = b;
-	b = c;
-}
-
-template <typename T>
-T	min(T a, T b) {
-
-	return (a >= b ? b : a);
-}
-
-template <typename T>
-T	max(T a, T b) {
-
-	return (a <= b ? b : a);
+	while (len < b) {
+		f(a[len]);
+		len++;
+	}
 }
