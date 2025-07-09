@@ -6,9 +6,11 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:12:48 by cereais           #+#    #+#             */
-/*   Updated: 2025/06/28 11:18:08 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/09 03:27:54 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <string>
 #include <iostream>
