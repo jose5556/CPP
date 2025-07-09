@@ -6,9 +6,12 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 03:27:10 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/09 03:27:29 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/09 03:31:38 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Array.hpp"
 
+Array::Array() {
+	
+}
