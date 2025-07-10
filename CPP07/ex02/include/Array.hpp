@@ -32,5 +32,6 @@ class outOfBounds : public std::exception {
 };
 	
 private:
-    T var;
+    T*	_array;
+    int	_size;
 };

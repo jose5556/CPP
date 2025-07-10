@@ -12,6 +12,16 @@
 
 #include "../include/Array.hpp"
 
-Array::Array() {
-	
+template <class T>
+Array<T>::Array() {
+
+	_array = new T[0];
+	_size = 0;
+}
+
+template <class T>
+Array<T>::Array() {
+
+	_size = n;
+_array = new T[n];
 }
