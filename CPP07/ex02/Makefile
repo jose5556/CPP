@@ -6,25 +6,24 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/06/28 12:54:04 by cereais          ###   ########.fr        #
+#    Updated: 2025/07/18 09:34:33 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := iter
+NAME     := array
 CXX      := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -I includes
 
 SRC_DIR  := srcs
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp \
-
-OBJS     := $(OBJ_DIR)/main.o \
+SRCS     := $(SRC_DIR)/main.cpp
+OBJS     := $(OBJ_DIR)/main.o
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
