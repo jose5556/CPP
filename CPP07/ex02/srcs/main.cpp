@@ -1,5 +1,8 @@
 #include <iostream>
-#include <Array.hpp>
+#include <stdio.h>      /* printf, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>
+#include "../include/Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)

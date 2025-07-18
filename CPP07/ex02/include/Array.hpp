@@ -6,15 +6,13 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:12:48 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/18 09:12:52 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/18 09:36:20 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
 #include <iostream>
-#include <cctype>
 
 template <class T>
 class Array {
@@ -28,13 +26,16 @@ public:
 	
 	T& operator[]( unsigned int i );
 
-	int	size();
+	unsigned int	size() const;
 
 class OverflowIndexException : public std::exception {
-	virtual const char* what() const throw();
+	public:
+		const char* what() const throw();
 };
 	
 private:
-    T*	_array;
-    int	_size;
+    T*				_array;
+    unsigned int	_size;
 };
+
+#include "Array.tpp"
