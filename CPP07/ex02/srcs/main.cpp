@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdio.h>      /* printf, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
 #include "../include/Array.hpp"
