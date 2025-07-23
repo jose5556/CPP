@@ -1,55 +1,55 @@
-#include <iostream>
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>
 #include "../include/Array.hpp"
+#include <iostream>
+#include <string>
 
-#define MAX_VAL 750
-int main(int, char**)
-{
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+struct Person {
+	std::string name;
+	int age;
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	Person() : name("Unknown"), age(0) {}
+	Person(std::string n, int a) : name(n), age(a) {}
+};
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+std::ostream& operator<<(std::ostream& os, const Person& p) {
+	return os << p.name << " (" << p.age << ")";
+}
+
+int main() {
+	try {
+		// Empty array
+		Array<int> emptyArray;
+		std::cout << "Empty array size: " << emptyArray.size() << std::endl;
+
+		// int
+		Array<int> intArray(5);
+		for (unsigned int i = 0; i < intArray.size(); ++i)
+			intArray[i] = i * 10;
+
+		std::cout << "intArray contents: ";
+		for (unsigned int i = 0; i < intArray.size(); ++i)
+			std::cout << intArray[i] << " ";
+		std::cout << std::endl;
+
+		// Const access
+		const Array<int> constIntArray = intArray;
+		std::cout << "constIntArray[2]: " << constIntArray[2] << std::endl;
+
+		// Complex type
+		Array<Person> people(3);
+		people[0] = Person("Alice", 30);
+		people[1] = Person("Bob", 25);
+		people[2] = Person("Charlie", 40);
+
+		std::cout << "people array:\n";
+		for (unsigned int i = 0; i < people.size(); ++i)
+			std::cout << "- " << people[i] << std::endl;
+
+		//Out of bounds access
+		std::cout << "Trying to access index 10 in intArray..." << std::endl;
+		std::cout << intArray[10] << std::endl; //should throw
+
+	} catch (const std::exception& e) {
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 03:27:10 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/18 09:37:13 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/23 15:13:13 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 template <class T>
 Array<T>::Array() {
 
-	_array = new T[0];
 	_size = 0;
+	_array = NULL;
 }
 
 template <class T>
@@ -60,6 +60,14 @@ Array<T>& Array<T>::operator=(const Array& src) {
 template<typename T>
 T& Array<T>::operator[]( unsigned int i ) {
 
+    if (i >= this->size())
+        throw OverflowIndexException();
+    return (_array[i]);
+}
+
+template<typename T>
+const T& Array<T>::operator[]( unsigned int i ) const
+{
     if (i >= this->size())
         throw OverflowIndexException();
     return (_array[i]);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:12:48 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/18 09:36:20 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/23 15:03:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	Array& operator=(const Array& src);
 	
 	T& operator[]( unsigned int i );
+	const T& operator[]( unsigned int i ) const;
 
 	unsigned int	size() const;
 
