@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 11:50:14 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/23 11:11:16 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/23 15:47:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ template <typename T>
 int	easyfind(const T &container, int b) {
 	
 	typename T::const_iterator it = std::find(container.begin(), container.end(), b);
+
 	if (it != container.end())
 		return (std::distance(container.begin(), it));
 	return (-1);
