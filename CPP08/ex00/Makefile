@@ -6,11 +6,11 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/06/28 11:25:16 by cereais          ###   ########.fr        #
+#    Updated: 2025/07/23 10:46:56 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := swap
+NAME     := find
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
