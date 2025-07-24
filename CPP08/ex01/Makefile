@@ -6,20 +6,20 @@
 #    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/07/23 10:46:56 by cereais          ###   ########.fr        #
+#    Updated: 2025/07/24 14:35:02 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := find
+NAME     := span
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR  := srcs
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp \
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/Span.cpp \
 
-OBJS     := $(OBJ_DIR)/main.o \
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/Span.o \
 
 all: $(NAME)
 
