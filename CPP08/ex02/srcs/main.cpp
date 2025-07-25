@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:22:57 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/24 18:15:37 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/25 12:19:05 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main() {
 	
-	/* MutantStack<int> mstack;
+	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;
@@ -25,29 +25,30 @@ int main() {
 	mstack.push(737);
 	//[...]
 	mstack.push(0);
+    //5 3 5 737 0
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
 	while (it != ite)
 	{
-	std::cout << *it << std::endl;
-	++it;
+	    std::cout << *it << std::endl;
+	    ++it;
 	}
-	std::stack<int> s(mstack); */
+	std::stack<int> s(mstack);
 	
 	//return 0;
 
 	// OWN TESTS //
 
-	MutantStack<int, std::vector<int> > mstackVec1;
+	/* MutantStack<int, std::vector<int> > mstackVec1;
     mstackVec1.push(50);
     mstackVec1.push(10);
     MutantStack<int, std::vector<int> > mstackVec2(mstackVec1);
     mstackVec2.pop();
     mstackVec2.push(200);
     mstackVec2.push(234);
-    std::cout << "-------MstackVec1-------" << std::endl;
+    std::cout << "-------test normal iterator-------" << std::endl;
     MutantStack<int, std::vector<int> >::iterator it1 = mstackVec1.begin();
     MutantStack<int, std::vector<int> >::iterator ite1 = mstackVec1.end();
     while (it1 != ite1)
@@ -55,7 +56,7 @@ int main() {
         std::cout << *it1 << std::endl;
         ++it1;
     }
-    std::cout << "-------MstackVec2-------" << std::endl;
+    std::cout << "-------test const iterator-------" << std::endl;
     MutantStack<int, std::vector<int> >::const_iterator it2 = mstackVec2.cbegin();
     MutantStack<int, std::vector<int> >::const_iterator ite2 = mstackVec2.cend();
     while (it2 != ite2)
@@ -63,7 +64,7 @@ int main() {
         std::cout << *it2 << std::endl;
         ++it2;
     }
-    std::cout << "-------Mstack3-------" << std::endl;
+    std::cout << "-------test reverse iterator-------" << std::endl;
     MutantStack<int> mstack3;
     mstack3.push(200);
     mstack3.push(234);
@@ -74,11 +75,11 @@ int main() {
         std::cout << *it3 << std::endl;
         ++it3;
     }
-    std::cout << "-------str_Stack-------" << std::endl;
+    std::cout << "-------test const reverse iterator-------" << std::endl;
     MutantStack<std::string, std::list<std::string> > str_Stack;
-    str_Stack.push("cao");
-    str_Stack.push("e");
-    str_Stack.push("gato");
+    str_Stack.push("era");
+    str_Stack.push("uma");
+    str_Stack.push("vez");
     MutantStack<std::string, std::list<std::string> >::const_reverse_iterator it4 = str_Stack.crbegin();
     MutantStack<std::string, std::list<std::string> >::const_reverse_iterator ite4 = str_Stack.crend();
     while (it4 != ite4)
@@ -86,5 +87,5 @@ int main() {
         std::cout << *it4 << std::endl;
         ++it4;
     }
-    return 0;
+    return 0; */
 }
