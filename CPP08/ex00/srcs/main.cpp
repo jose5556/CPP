@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:58:13 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/23 11:12:10 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:28:21 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main(void) {
 	int indexVectorResult;
 	
 	int arr[] = {1, 3, 5, 7, 9};
-	std::list<int> l(arr, arr + 5);
-	std::vector<int> v(arr, arr + 5);
+	std::list<int> l(arr, arr + sizeof(arr)/sizeof(arr[0]));
+	std::vector<int> v(arr, arr + sizeof(arr)/sizeof(arr[0]));
 
 
 	indexListResult = easyfind(l, 9);
