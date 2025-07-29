@@ -3,23 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
+#    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/07/23 10:46:56 by cereais          ###   ########.fr        #
+#    Updated: 2025/07/29 15:36:56 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     := find
+NAME     := btc
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR  := srcs
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp \
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/BitcoinExchange.cpp\
 
-OBJS     := $(OBJ_DIR)/main.o \
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/BitcoinExchange.o \
 
 all: $(NAME)
 
