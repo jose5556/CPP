@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:39:17 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/07/24 16:13:29 by cereais          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:29:05 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	Span::addNumber(int number) {
 
 int		Span::shortestSpan() {
 	
-	int	result = std::numeric_limits<int>::max();;
+	int	result = std::numeric_limits<int>::max();
 
 	if (_v1.empty() || _v1.size() < 2)
 		throw (Span::operationFailed());
