@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/12 15:17:26 by cereais           #+#    #+#              #
-#    Updated: 2025/07/29 15:36:56 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/07/31 17:17:39 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC_DIR  := srcs
 OBJ_DIR  := obj
 
-SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/BitcoinExchange.cpp\
+SRCS     := $(SRC_DIR)/main.cpp $(SRC_DIR)/BitcoinExchange.cpp $(SRC_DIR)/errorMessages.cpp \
 
-OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/BitcoinExchange.o \
+OBJS     := $(OBJ_DIR)/main.o $(OBJ_DIR)/BitcoinExchange.o $(OBJ_DIR)/errorMessages.o \
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:54:45 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/07/31 16:45:08 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/07/31 17:26:40 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <algorithm>
 
 #define FILE_ERROR			"Error: could not open file."
-#define	HEADER_ERROR	"Error: inpossible configuration of => ."
+#define	HEADER_ERROR		"Error: inpossible configuration of => "
 #define RANGE_NUM_ERROR		"Error: too large a number"
 #define NEGATIVE_NUM_ERROR	"Error: not a positive number."
 #define INPUT_ERROR			"Error: bad input => "
@@ -33,9 +33,5 @@ int		headerError(std::string line);
 void	RangeNumError();
 void	negNUmError();
 void	inputNumError(std::string input);
-
-//parsing
-bool	verifyHeader(std::string line);
-void	mapParser(std::map<std::string, float> &inputMap, std::string line);
 
 #endif
