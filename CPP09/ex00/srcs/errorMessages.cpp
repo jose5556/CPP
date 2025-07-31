@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:52:43 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/07/29 18:44:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:45:12 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	argumentError() {
 
 int	headerError(std::string line) {
 	
-	std::cout << INPUT_HEADER_ERROR << line << std::endl;
+	std::cout << HEADER_ERROR << line << std::endl;
 	exit(EXIT_FAILURE);
 }
 
