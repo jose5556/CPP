@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:58:13 by cereais           #+#    #+#             */
-/*   Updated: 2025/07/29 18:23:57 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:42:29 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int main(int argc, char *argv[]) {
 		return (argumentError());
 	}
 	
-	BitcoinExchange	bit(argv[1]);
+	BitcoinExchange	bit();
 }
