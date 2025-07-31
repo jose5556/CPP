@@ -1,2 +1,4 @@
 # Ignore subject.pdf
 en.subject.pdf
+.vscode
+input.txt
