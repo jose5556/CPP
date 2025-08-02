@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:34:49 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/07/31 17:25:49 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/08/02 20:06:12 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include "Data.hpp"
 #include <map>
 #include <algorithm>
 #include <string>
@@ -19,7 +20,7 @@
 #include <fstream>
 #include <cstdlib>
 
-class BitcoinExchange {
+class BitcoinExchange : public Data {
 	
 public:
 	BitcoinExchange();
@@ -28,6 +29,7 @@ public:
 	BitcoinExchange& operator=(const BitcoinExchange& src);
 
 	void	dataBaseParser(std::string line);
+	void	compareInputDB(const Data &data);
 
 private:
 	std::map<std::string, float> _dataBase;
