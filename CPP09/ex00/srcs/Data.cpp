@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 22:47:17 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/04 22:43:36 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/04 22:45:53 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	Data::validateDate(int y, int m, int d) {
 
 const char* Data::FileError::what() const throw() {
 	return ("Error: could not open file.\n");
-}int
+}
 const char* Data::HeaderError::what() const throw() {
 	return ("Error: inpossible configuration of => ");
 }
@@ -90,7 +90,7 @@ const char* Data::NegNumError::what() const throw() {
 const char* Data::InputNumError::what() const throw() {
 	return message.c_str();
 }
-int
+
 std::string	Data::getDate() const {
 	return (this->_date);
 }
