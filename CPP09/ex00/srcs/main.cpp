@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:58:13 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/04 22:14:34 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/04 22:49:46 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 	
 	getline(file, line);
 	if (!(line == "date | value")) {
-		std::cout << "Error: inpossible configuration of => " << std::endl;
+		std::cout << "Error: inpossible configuration." << std::endl;
 		exit(EXIT_FAILURE);
 	}
 
