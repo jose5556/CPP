@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:34:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/08/02 20:19:21 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/04 22:40:12 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,13 @@ void	BitcoinExchange::compareInputDB(const Data &data) {
 	
 	std::map<std::string, float>::iterator it = _dataBase.lower_bound(data.getDate());
 
-	if (it != _dataBase.end() && it->first == data.getDate())
-		std::cout << data.getDate() << " => " << data.getValue() << " = " << data.getValue() * it->second << std::endl;
+	if (it != _dataBase.end() && it->first == data.getDate()) {
+		
+		if (data.getValue() < 0)
+			std::cout << "Error: not a positive number." << std::endl;
+		else
+			std::cout << data.getDate() << " => " << data.getValue() << " = " << data.getValue() * it->second << std::endl;
+	}
 	else {
 		
 		if (it == _dataBase.begin())
@@ -80,7 +85,10 @@ void	BitcoinExchange::compareInputDB(const Data &data) {
 		else {
 			
 			--it;
-			std::cout << data.getDate() << " => " << data.getValue() << " = " << data.getValue() * it->second << std::endl;
+			if (data.getValue() < 0)
+				std::cout << "Error: not a positive number." << std::endl;
+			else
+				std::cout << data.getDate() << " => " << data.getValue() << " = " << data.getValue() * it->second << std::endl;
 		}
 	}
 }

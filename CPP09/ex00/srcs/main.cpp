@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:58:13 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/02 20:17:35 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/04 22:14:34 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 			bit.compareInputDB(data);
 		}
 		catch (const std::exception &e) {
-			std::cerr << e.what() << std::endl;
+			std::cerr << e.what();
 		}
 	}	
 
