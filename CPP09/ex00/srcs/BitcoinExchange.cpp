@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:34:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/08/04 22:40:12 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/20 00:29:07 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,16 @@ void	BitcoinExchange::dataBaseParser(std::string line) {
 	if (pos == std::string::npos) {
 		return ;
 	}
-	
+
 	date = line.substr(0, pos);
 	valueStr = line.substr(pos+1);
 	valueNum = atof(valueStr.c_str());
-	
+
 	this->_dataBase.insert(std::make_pair(date, valueNum));
 }
 
 void	BitcoinExchange::compareInputDB(const Data &data) {
-	
+
 	std::map<std::string, float>::iterator it = _dataBase.lower_bound(data.getDate());
 
 	if (it != _dataBase.end() && it->first == data.getDate()) {
