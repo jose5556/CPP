@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/20 16:27:16 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/21 12:11:20 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,27 @@
 #include <string>
 #include <iostream>
 #include <stack>
+#include <cctype>
 
 class RPN {
 	
 public:
 	RPN(std::string input);
 	~RPN();
+	RPN(const RPN& copy);
+	RPN& operator=(const RPN& src);
 
-	void	verifyInput(std::string parsed);
+	bool	verifyInput(std::string parsed);
+	void	printStack();
 
 	class IlligalInput : public std::exception {
+		const char* what() const throw();
+	};
+	class Empty : public std::exception {
 		const char* what() const throw();
 	};
 
 private:
 	RPN();
-	RPN(const RPN& copy);
-	RPN& operator=(const RPN& src);
 	std::stack<std::string> _myStack;
 };
