@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/21 12:11:20 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:46:42 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ public:
 
 	bool	verifyInput(std::string parsed);
 	void	printStack();
+	void	mathNums(std::string chr);
+	void	stackParser();
+	int		mathOperation(std::string num1, std::string token, std::string num2);
 
 	class IlligalInput : public std::exception {
 		const char* what() const throw();
@@ -38,4 +41,5 @@ public:
 private:
 	RPN();
 	std::stack<std::string> _myStack;
+	int 					_result;
 };

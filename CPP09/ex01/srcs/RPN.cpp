@@ -6,11 +6,13 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:17 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/21 12:14:14 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:45:29 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/RPN.hpp"
+
+static bool	isDigit(std::string chr);
 
 RPN::RPN(std::string input) {
 	
@@ -30,7 +32,7 @@ RPN::RPN(std::string input) {
 			throw IlligalInput();
 		if (parsed.length() == 0)
 			continue ;
-		_myStack.push(parsed);
+		mathNums(parsed);
 	}
 	if (_myStack.empty())
 		throw Empty();
@@ -52,20 +54,14 @@ RPN& RPN::operator=(const RPN& src) {
 
 bool	RPN::verifyInput(std::string parsed) {
 
-	if (parsed.length() == 1) {
-		if (parsed == "+" || parsed == "-" || parsed == "*" || parsed == "/")
-			return (true);
-		else if (isdigit(parsed[0]))
-			return (true);
-		return (false);
-	}
-	
-	for (std::string::iterator it = parsed.begin(); it != parsed.end(); it++) {
+	if (parsed.length() != 1)
+		throw IlligalInput();
 
-		if (!isdigit(*it))
-			return (false);
-	}
-	return (true);
+	if (parsed == "+" || parsed == "-" || parsed == "*" || parsed == "/")
+		return (true);
+	else if (isDigit(parsed))
+		return (true);
+	return (false);
 }
 
 const char* RPN::IlligalInput::what() const throw() {
@@ -82,4 +78,57 @@ void	RPN::printStack() {
 		std::cout << _myStack.top() << std::endl;
 		_myStack.pop();
 	}
+}
+
+void	RPN::mathNums(std::string chr) {
+	
+
+	static int	twoDigits = 0;
+	static bool	token = false;
+
+	_myStack.push(chr);   //push into the stack wherever is the arg
+
+	if (isDigit(chr))  //update static funcs to the arg type
+		twoDigits++;
+	else
+		token = true;
+		
+	if (twoDigits == 2 && token) {
+		
+		stackParser();
+		token = false;
+		twoDigits = 1;
+	}
+}
+
+void	RPN::stackParser() {
+
+	std::string	num1;
+	std::string	num2;
+	std::string	token;
+	int			result;
+
+	while (!_myStack.empty()) {
+
+		if (!_myStack.empty() && !isDigit(_myStack.top())) {
+			token = _myStack.top();
+			_myStack.pop();
+		} else if (!_myStack.empty() && isDigit(_myStack.top())) {
+
+			if (num1.empty())
+				num1 = _myStack.top();
+			else
+				num2 = _myStack.top();
+			_myStack.pop();
+		}
+	}
+	result = mathOperation(num1, token, num2);
+	
+} 
+
+static bool	isDigit(std::string chr) {
+
+	if (isdigit(chr[0]))
+		return (true);
+	return (false);
 }
