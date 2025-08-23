@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:17 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/22 21:45:29 by cereais          ###   ########.fr       */
+/*   Updated: 2025/08/23 23:25:04 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,18 @@ RPN::RPN(std::string input) {
 		parsed = input.substr(posBefore, posNext - posBefore);
 		posBefore = posNext + 1;
 		if (!verifyInput(parsed))
-			throw IlligalInput();
+			throw IllegalInput();
 		if (parsed.length() == 0)
 			continue ;
-		mathNums(parsed);
+		stackParser(parsed);
 	}
 	if (_myStack.empty())
 		throw Empty();
+	if (_myStack.size() != 1) {
+		throw IllegalOperation();
+	} else {
+		printStack();
+	}
 } 
 
 RPN::~RPN() {}
@@ -55,7 +60,7 @@ RPN& RPN::operator=(const RPN& src) {
 bool	RPN::verifyInput(std::string parsed) {
 
 	if (parsed.length() != 1)
-		throw IlligalInput();
+		throw IllegalInput();
 
 	if (parsed == "+" || parsed == "-" || parsed == "*" || parsed == "/")
 		return (true);
@@ -64,7 +69,7 @@ bool	RPN::verifyInput(std::string parsed) {
 	return (false);
 }
 
-const char* RPN::IlligalInput::what() const throw() {
+const char* RPN::IllegalInput::what() const throw() {
 	return ("ERROR! Illegal character(s) on your input.\n");
 }
 
@@ -72,59 +77,71 @@ const char* RPN::Empty::what() const throw() {
 	return ("ERROR! Empty or invalid input.\n");
 }
 
+const char* RPN::IllegalOperation::what() const throw() {
+	return ("ERROR! Illegal operation.\n");
+}
+
+const char* RPN::IllegalDivision::what() const throw() {
+	return ("ERROR! Illegal division.\n");
+}
+
 void	RPN::printStack() {
-	
+
 	while (!_myStack.empty()) {
 		std::cout << _myStack.top() << std::endl;
 		_myStack.pop();
 	}
 }
 
-void	RPN::mathNums(std::string chr) {
+void	RPN::stackParser(std::string element) {
 	
+	int	num1;
+	int	num2;
 
-	static int	twoDigits = 0;
-	static bool	token = false;
+	if (isDigit(element)) {
 
-	_myStack.push(chr);   //push into the stack wherever is the arg
-
-	if (isDigit(chr))  //update static funcs to the arg type
-		twoDigits++;
-	else
-		token = true;
+		_myStack.push(element);
+	} else if (_myStack.size() > 1) {
 		
-	if (twoDigits == 2 && token) {
-		
-		stackParser();
-		token = false;
-		twoDigits = 1;
+		num1 = std::atoi(_myStack.top().c_str());
+		_myStack.pop();
+		num2 = std::atoi(_myStack.top().c_str());
+		_myStack.pop();
+		mathOperation(num1, num2, element);
+	} else {
+		throw IllegalOperation();
 	}
 }
 
-void	RPN::stackParser() {
+void	RPN::mathOperation(int num1, int num2, std::string element) {
 
-	std::string	num1;
-	std::string	num2;
-	std::string	token;
-	int			result;
-
-	while (!_myStack.empty()) {
-
-		if (!_myStack.empty() && !isDigit(_myStack.top())) {
-			token = _myStack.top();
-			_myStack.pop();
-		} else if (!_myStack.empty() && isDigit(_myStack.top())) {
-
-			if (num1.empty())
-				num1 = _myStack.top();
-			else
-				num2 = _myStack.top();
-			_myStack.pop();
-		}
-	}
-	result = mathOperation(num1, token, num2);
+	std::stringstream ss;
 	
-} 
+	if (element == "+") {
+		ss << num2 + num1;
+		/* std::cout << num2 << " + " << num1 << 
+		" = " << num2 + num1 << std::endl; */
+	}
+	else if (element == "-") {
+		ss << num2 - num1;
+		/* std::cout << num2 << " - " << num1 << 
+		" = " << num2 - num1 << std::endl; */
+	}
+	else if (element == "*") {
+		ss << num2 * num1;
+		/* std::cout << num2 << " * " << num1 << 
+		" = " << num2 * num1 << std::endl; */
+	}
+	else if (element == "/") {
+		if (num1 == 0 || num2 == 0)
+			throw IllegalDivision();
+		ss << num2 / num1;
+		/* std::cout << num2 << " / " << num1 << 
+		" = " << num2 / num1 << std::endl; */
+	}
+	
+	_myStack.push(ss.str());
+}
 
 static bool	isDigit(std::string chr) {
 
