@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/19 23:37:02 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/26 23:55:38 by cereais          ###   ########.fr       */
+/*   Created: 2025/08/26 23:12:42 by cereais           #+#    #+#             */
+/*   Updated: 2025/08/26 23:19:00 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/PmergeMe.hpp"
+template <typename T>
+PmergeMe<T>::PmergeMe() {}
 
-int main(int argc, char *argv[]) {
+template <typename T>
+PmergeMe<T>::~PmergeMe() {}
+
+template <typename T>
+PmergeMe<T>::PmergeMe(const PmergeMe& copy) {
 	
-
-	if (argc == 1) {
-		std::cerr << "ERROR! Please insert at least one argument.";
-		return (1);
-	}
-
-	
+	this->
 }
-
