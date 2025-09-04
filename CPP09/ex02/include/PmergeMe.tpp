@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 23:12:42 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/04 18:09:06 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/04 18:42:04 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ PmergeMe<T>::PmergeMe(char **input) {
         throw IllegalInput();
     ++input;
 	}
+	printContainer(true);
 }
 
 template <typename T>
@@ -56,6 +57,22 @@ bool	PmergeMe<T>::inputParser(std::string input) {
 		_chain.push_back(num);
 	}
 	return (true);
+}
+
+template <typename T>
+void	PmergeMe<T>::printContainer(bool isBefore) {
+
+	if (isBefore)
+		std::cout << "Before: " << std::endl;
+	else
+		std::cout << "After: " << std::endl;
+
+    typedef typename T::const_iterator it;
+	
+    for (it iter = _chain.begin(); iter != _chain.end(); ++iter) {
+        std::cout << *iter << " ";
+    }
+    std::cout << std::endl;
 }
 
 template <typename T>

@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/29 19:00:39 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/04 18:39:32 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ public:
 	PmergeMe& operator=(const PmergeMe& src);
 
 	bool	inputParser(std::string input);
+	void	printContainer(bool isBefore);
 
 	class IllegalInput : public std::exception {
 		const char* what() const throw();
 	};
 
-	T	_chain;
-	T	_subChain;
-
 private:
 	PmergeMe();
+	T	_chain;
+	T	_subChain;
 };
 
 #include "PmergeMe.tpp"
