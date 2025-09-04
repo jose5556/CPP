@@ -6,18 +6,18 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 23:12:42 by cereais           #+#    #+#             */
-/*   Updated: 2025/08/29 19:13:08 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/04 18:09:06 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 template <typename T>
 PmergeMe<T>::PmergeMe(char **input) {
 
-	while (input++) {
+	while (*input) {
 
-		if (!inputParser(*input)) {
-			throw IllegalInput();
-		}
+    if (!inputParser(*input))
+        throw IllegalInput();
+    ++input;
 	}
 }
 
