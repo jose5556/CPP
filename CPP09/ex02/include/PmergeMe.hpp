@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/04 18:39:32 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/05 21:22:35 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ public:
 
 	bool	inputParser(std::string input);
 	void	printContainer(bool isBefore);
+
+	void	mergeSort(int length);
+	void	mergeSortRecursion(int l, int r);
+	void	mergeSortedContainers(int l, int m, int r);
 
 	class IllegalInput : public std::exception {
 		const char* what() const throw();
