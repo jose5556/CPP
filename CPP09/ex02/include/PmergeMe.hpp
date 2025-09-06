@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/05 21:22:35 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/06 19:48:42 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	bool	inputParser(std::string input);
 	void	printContainer(bool isBefore);
 
-	void	mergeSort(int length);
+	void	mergeSort();
 	void	mergeSortRecursion(int l, int r);
 	void	mergeSortedContainers(int l, int m, int r);
 
@@ -41,8 +41,8 @@ public:
 
 private:
 	PmergeMe();
-	T	_chain;
-	T	_subChain;
+	T	_c;
+	int	_length;
 };
 
 #include "PmergeMe.tpp"
