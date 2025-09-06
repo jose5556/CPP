@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/06 19:48:42 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/06 20:55:58 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <vector>
 #include <deque>
 #include <cstdlib>
+#include <climits>
 
 template <typename T>
 class PmergeMe {

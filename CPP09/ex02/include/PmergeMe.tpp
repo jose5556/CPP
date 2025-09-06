@@ -6,7 +6,7 @@
 /*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 23:12:42 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/06 20:34:13 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/06 20:59:19 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ bool	PmergeMe<T>::inputParser(std::string input) {
 			return (false);
 		}
 	}
+
+	if (atoi(input.c_str()) > INT_MAX || atoi(input.c_str()) < 0)
+		throw IllegalInput();
+
 	num = atoi(input.c_str());
 	_c.push_back(num);
 	return (true);
