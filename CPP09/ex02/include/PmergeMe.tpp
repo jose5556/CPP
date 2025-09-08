@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 23:12:42 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/06 20:59:19 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/08 14:59:25 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ PmergeMe<T>::PmergeMe(char **input) {
 		++input;
 		_length++;
 	}
-	printContainer(true);
 }
 
 template <typename T>
@@ -68,9 +67,9 @@ template <typename T>
 void	PmergeMe<T>::printContainer(bool isBefore) {
 
 	if (isBefore)
-		std::cout << "Before: " << std::endl;
+		std::cout << "Before: ";
 	else
-		std::cout << "After: " << std::endl;
+		std::cout << "After: ";
 
 	typedef typename T::const_iterator it;
 	
@@ -84,8 +83,6 @@ template <typename T>
 void	PmergeMe<T>::mergeSort() {
 
 	mergeSortRecursion(0, _length - 1);
-	
-	printContainer(false);
 }
 
 template <typename T>
@@ -134,7 +131,6 @@ void PmergeMe<T>::mergeSortedContainers(int l, int m, int r) {
 	while (j < right_length)
 		_c[k++] = tempR[j++];
 }
-
 
 template <typename T>
 const char* PmergeMe<T>::IllegalInput::what() const throw() {

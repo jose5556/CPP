@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 23:37:28 by cereais           #+#    #+#             */
-/*   Updated: 2025/09/06 20:55:58 by cereais          ###   ########.fr       */
+/*   Updated: 2025/09/08 14:58:03 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ public:
 		const char* what() const throw();
 	};
 
+	int	_length;
 private:
 	PmergeMe();
 	T	_c;
-	int	_length;
+	time_t timestamp;
 };
 
 #include "PmergeMe.tpp"
